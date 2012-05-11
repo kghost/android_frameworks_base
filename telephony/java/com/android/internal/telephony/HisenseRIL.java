@@ -389,32 +389,6 @@ public class HisenseRIL extends QualcommNoSimReadyRIL implements CommandsInterfa
 
     @Override
     public void
-    setupDataCall(String radioTechnology, String profile, String apn,
-            String user, String password, String authType, String protocol,
-            Message result) {
-        RILRequest rr
-                = RILRequest.obtain(RIL_REQUEST_SETUP_DATA_CALL, result);
-
-        rr.mp.writeInt(7);
-
-        rr.mp.writeString(radioTechnology);
-        rr.mp.writeString(profile);
-        rr.mp.writeString(apn);
-        rr.mp.writeString(user);
-        rr.mp.writeString(password);
-        rr.mp.writeString(authType);
-        rr.mp.writeString(protocol);
-
-        if (RILJ_LOGD) riljLog(rr.serialString() + "> "
-                + requestToString(rr.mRequest) + " " + radioTechnology + " "
-                + profile + " " + apn + " " + user + " "
-                + password + " " + authType + " " + protocol);
-
-        send(rr);
-    }
-
-    @Override
-    public void
     iccIO (int command, int fileid, String path, int p1, int p2, int p3,
             String data, String pin2, Message result) {
         //Note: This RIL request has not been renamed to ICC,
