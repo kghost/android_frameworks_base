@@ -1317,7 +1317,7 @@ public class RIL extends BaseCommands implements CommandsInterface {
      *  Translates EF_SMS status bits to a status value compatible with
      *  SMS AT commands.  See TS 27.005 3.1.
      */
-    private int translateStatus(int status) {
+    protected int translateStatus(int status) {
         switch(status & 0x7) {
             case SmsManager.STATUS_ON_ICC_READ:
                 return 1;
