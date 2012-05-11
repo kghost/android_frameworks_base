@@ -673,7 +673,7 @@ final class CdmaServiceStateTracker extends ServiceStateTracker {
         // If the device you seek to make work here has a multi-mode radio, for example
         // a "world" CDMA/GSM/UMTS radio, this function is here to facilitate alternate
         // code paths in some events.
-        return SystemProperties.get("ro.telephony.ril_class").equalsIgnoreCase("mototegraworld");
+        return SystemProperties.get("ro.telephony.multi_mode_radio").equalsIgnoreCase("true");
     }
 
 

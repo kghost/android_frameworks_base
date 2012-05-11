@@ -137,6 +137,9 @@ public class PhoneFactory {
                 } else if ("motow3g".equals(sRILClassname)) {
                     Log.i(LOG_TAG, "Using Motorola Wrigley 3G RIL");
                     sCommandsInterface = new MotoWrigley3GRIL(context, networkMode, cdmaSubscription);
+                } else if ("hisense".equals(sRILClassname)) {
+                    Log.i(LOG_TAG, "Using Hisense RIL");
+                    sCommandsInterface = new HisenseRIL(context, networkMode, cdmaSubscription);
                 } else {
                     sCommandsInterface = new RIL(context, networkMode, cdmaSubscription);
                 }
